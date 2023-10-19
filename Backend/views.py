@@ -1,11 +1,13 @@
 from django.http import JsonResponse
 from .models import Product
 from .serializers import ProductSerializer
-
-def ProductList(requset):
-  # get all the products
-  # serialize them
-  # return a json object
+from django.shortcuts import render
+# from rest_frameworks.decorators import api_view
+# 
+# @api_view('GET', 'POST')
+def ProductList(request):
   products = Product.objects.all()
+  print(f"products: {products}")
   serializer = ProductSerializer(products, many=True)
-  return JsonResponse(serializer.data, safe=False)
+  return JsonResponse({'products': serializer.data})
+  # return render(request)pgAdmin 4 started
