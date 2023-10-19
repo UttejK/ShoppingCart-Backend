@@ -21,6 +21,7 @@ from . import views
 urlpatterns = [
     path("shoppingcart/", include("shoppingcart.urls")),
     path("products/", views.ProductList),
+    path("products/<int:id>", views.ProductDetail),
     path('admin/', admin.site.urls),
 ]
 
