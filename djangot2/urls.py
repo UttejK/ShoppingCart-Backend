@@ -1,5 +1,5 @@
 """
-URL configuration for Backend project.
+URL configuration for djangot2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
 
 urlpatterns = [
-    path("shoppingcart/", include("shoppingcart.urls")),
-    path("products/", views.ProductList),
-    path("products/<int:id>", views.ProductDetail),
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
 ]
 

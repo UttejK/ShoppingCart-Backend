@@ -1,34 +1,83 @@
 # Ignore compiled Python files
 *.pyc
-__pycache__/
 
-# Ignore the virtual environment folder (if using virtualenv or venv)
+# Ignore Python virtual environment
 venv/
-env/
+
+# Ignore local development settings
+*.env
 
 # Ignore database files
-*.sqlite3
+db.sqlite3
 
-# Ignore media and static files (if served separately and not part of version control)
+# Ignore media and static files
 media/
 static/
+
+# Ignore sensitive or environment-specific information
+.env.local
+.env.production
+
+# Ignore IDE and editor specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore Django migration files
+**/migrations/
 
 # Ignore log files
 *.log
 
-# Ignore environment-specific settings files (e.g., local settings)
-settings_local.py
+# Ignore secret key file
+secret_key.txt
 
-# Ignore configuration files
-*.ini
-*.conf
+# Ignore local configuration
+local_settings.py
 
-# Ignore IDE and text editor-specific files
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+# Ignore node_modules directory if you are using frontend libraries
+node_modules/
 
-# Ignore operating system-generated files
+# Ignore compiled JavaScript files
+*.min.js
+
+# Ignore cache files
+__pycache__/
+.cached_data/
+
+# Ignore temporary files
+*.swp
+*.swo
+
+# Ignore user-specific project settings
+/.vscode/
+*.iml
+*.pydevproject
+
+# Ignore Mac specific files
 .DS_Store
-Thumbs.db
+
+# Ignore editor backup files
+*~
+
+# Ignore pipenv virtual environment
+Pipfile.lock
+
+# Ignore Docker related files if you are using Docker
+Dockerfile
+docker-compose.yml
+
+# Ignore pytest cache directory
+.pytest_cache/
+
+# Ignore coverage reports
+htmlcov/
+
+# Ignore .gitignore itself and any other custom ignore files
+.gitignore
+!.gitignore
+
+# Ignore database configuration
+/config/
+*.conf

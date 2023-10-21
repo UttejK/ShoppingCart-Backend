@@ -1,14 +1,16 @@
 # Backend/management/commands/import_data.py
 import csv
 from django.core.management.base import BaseCommand
-from Backend.models import Product
+from api.models import Product
+
 
 class Command(BaseCommand):
     help = 'Import data from CSV file into the database'
 
     def handle(self, *args, **kwargs):
-        with open('D:/Downloads/MasterDB_rows.csv', 'r') as csvfile:  # Use forward slash (/) or double backslashes (\\) in the path
-            csvreader = csv.reader(csvfile)
+        with open(r'D:\Projects\web\ReactJS\djangot2\MasterDB_rows.csv',
+                  'r') as csvfile:  # Use forward slash (/) or double backslashes (\\) in the path
+            csvreader = csv.reader(csvfile, delimiter=',')
             next(csvreader)  # Skip header row if it exists
             for row in csvreader:
                 # Extract values from the row
