@@ -32,8 +32,6 @@ class Purchase(models.Model):
         return f'Purchase of product ID {self.product_id} by user ID {self.user_id}'
 
 
-
-
 class Cart(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()

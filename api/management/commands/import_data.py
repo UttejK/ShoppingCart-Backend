@@ -1,4 +1,3 @@
-# Backend/management/commands/import_data.py
 import csv
 from django.core.management.base import BaseCommand
 from api.models import Product
@@ -9,7 +8,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         with open(r'D:\Projects\web\ReactJS\djangot2\MasterDB_rows.csv',
-                  'r') as csvfile:  # Use forward slash (/) or double backslashes (\\) in the path
+                  'r') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             next(csvreader)  # Skip header row if it exists
             for row in csvreader:
